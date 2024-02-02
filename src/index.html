@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test</title>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.0/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/obs-websocket-js"></script>
+    <style>
+      .columnContainer {
+        padding-top: 5px;
+        display: flex;
+        float: left;
+        align-content: flex-start;
+      }
+
+      .column {
+        flex: 25%;
+        padding-right: 10px;
+      }
+
+      .SaveButton {
+        clear: both;
+      }
+
+      .SelectTeamsDiv {
+        padding-top: 5px;
+      }
+
+      input[type='number']{
+      width: 30px;
+      } 
+    </style>
+</head>
+<body>
+    <script defer src="main.js" type="module"></script>
+    <div class="OBSws"></div>
+    <div class="RLws"></div>
+    <br>
+    <label>Game Type: </label>
+    <select>
+      <option class="game-type" id="1game-type">1v1</option>
+      <option class="game-type" id="2game-type">2v2</option>
+      <option class="game-type" id="3game-type">3v3</option>
+    </select>
+    <div class="SelectTeamsDiv" id="SelectTeamsDiv">
+        <label>Team 1:</label>
+            <input class="Score1" id="Score1" type="number" min="0" value="0">
+          <label>Team 2:</label>
+            <input class="Score2" id="Score2" type="number" min="0" value="0">
+          <button class="Reset" id="Reset">Reset</button>
+        <br>
+        <div class="columnContainer">
+          <div class="column" id="Team1Players">
+            <label>Team 1 Players:</label>
+            <br>
+              <input class="Team1PlayerNames" id="Player1Name" type="text">
+              <br>
+              <input class="Team1PlayerNames" id="Player2Name" type="text">
+          </div>
+          <div class="column" id="Team2Players">
+            <label>Team 2 Players:</label>
+            <br>
+              <input class="Team2PlayerNames" id="Player3Name" type="text">
+              <br>
+              <input class="Team2PlayerNames" id="Player4Name" type="text">
+          </div>
+          <div class="column" id="Team2Cams">
+          <br>
+        </div>
+      </div>
+      <div class="SaveButton">
+        <br>
+        <button id="Save">Save</button>
+        <button id="Refresh">Refresh</button>
+        <button id="Settings">Settings</button>
+      </div>
+</body>
+</html>
